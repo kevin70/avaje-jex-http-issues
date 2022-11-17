@@ -1,0 +1,32 @@
+plugins {
+    id "java"
+}
+
+group "cool.houge"
+version "1.0-SNAPSHOT"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    annotationProcessor(platform("com.fasterxml.jackson:jackson-bom:2.14.0"))
+
+    annotationProcessor("io.avaje:avaje-inject-generator:$avajeInjectVersion")
+    annotationProcessor("io.avaje:avaje-jsonb-generator:$avajeJsonbVersion")
+    annotationProcessor("io.avaje:avaje-http-jex-generator:$avajeHttpVersion")
+    annotationProcessor("org.projectlombok:lombok:$lombokVersion")
+    compileOnly("org.projectlombok:lombok:$lombokVersion")
+
+    implementation("io.avaje:avaje-inject:$avajeInjectVersion")
+    implementation("io.avaje:avaje-http-api:$avajeHttpVersion")
+    implementation("io.avaje:avaje-jex-jetty:$avajeJexVersion")
+    implementation("io.avaje:avaje-jsonb:$avajeJsonbVersion")
+
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.1")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.1")
+}
+
+test {
+    useJUnitPlatform()
+}
