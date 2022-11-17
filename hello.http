@@ -1,4 +1,7 @@
 ### Hello Test
 GET http://localhost:7001/hello
 
+### Exception Test
+GET http://localhost:7001/hello/ex
+
 ###

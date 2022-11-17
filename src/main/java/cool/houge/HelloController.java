@@ -19,4 +19,9 @@ public class HelloController {
         return bean;
     }
 
+    @Get("/ex")
+    public HelloBean ex() {
+        throw new IllegalArgumentException();
+    }
+
 }
